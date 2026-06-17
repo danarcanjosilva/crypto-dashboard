@@ -25,6 +25,7 @@
 <tr>
 <th>Moeda</th>
 <th>Preço USD</th>
+<th>24h %</th>
 </tr>
 
 </thead>
@@ -36,6 +37,7 @@
 <tr>
 <td>{{ coin.symbol }}</td>
 <td>${{ coin.price }}</td>
+<td>{{ coin.change }}%</td>
 </tr>
 
 {% endfor %}
