@@ -1,5 +1,9 @@
 # 🚀 Crypto Dashboard Pro
 
+## 📸 Screenshot
+
+![Dashboard](screenshots/dashboard.png)
+
 Dashboard profissional de criptomoedas desenvolvido em Python e Flask com integração em tempo real à API da Binance.
 
 O projeto exibe preços atualizados, variação percentual das últimas 24 horas, máximas, mínimas e volume de negociação utilizando WebSockets e APIs REST.
