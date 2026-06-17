@@ -1,30 +1,21 @@
-from flask import Flask, render_template
 import requests
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
+SYMBOLS = ["BTCUSDT", "ETHUSDT", "BNBUSDT", "SOLUSDT", "ADAUSDT"]
+
 @app.route("/")
 def index():
-
-    symbols = [
-        "BTCUSDT",
-        "ETHUSDT",
-        "BNBUSDT",
-        "SOLUSDT",
-        "ADAUSDT"
-    ]
-
     prices = []
 
-    for symbol in symbols:
-
+    for symbol in SYMBOLS:
         url = f"https://api.binance.com/api/v3/ticker/24hr?symbol={symbol}"
-        response = requests.get(url)
-        data = response.json()
+        data = requests.get(url).json()
 
         prices.append({
             "symbol": symbol,
-            "price": data["lastPrice"],
+            "price": float(data["lastPrice"]),
             "change": float(data["priceChangePercent"])
         })
 
